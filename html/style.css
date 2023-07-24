@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap');
+
 *{
     padding: 0;
     margin: 0;
@@ -5,5 +7,126 @@
 }
 
 body {
-    
+    font-family: 'Fredoka', sans-serif;   
+    background-image: linear-gradient(to right, #32a8a4, #326fa8); 
+    color: white;
+}
+
+.container {
+    width: 95%;
+    margin: auto;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 25px 0;
+}
+
+.nav h2 {
+    font-size: 2rem;
+}
+
+.user-input {
+    width: 350px;
+    text-align: center;
+}
+
+.user-input input {
+    width: 80%;
+    outline: none;
+    padding: 8px;
+    border: 1px solid lightgray;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.user-input input:focus {
+    box-shadow: 0 0 5px black;
+    border: 1px solid black;
+}
+
+.user-input button{
+    cursor: pointer;
+    padding: 8px;
+    width: fit-content;
+    transition: 1s;
+    outline: none;
+    background-color: lightgrey;
+    border: 1px solid lightgrey;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.user-input button:hover {
+    background-color: transparent;
+    color: white;
+}
+
+.to-do-items{
+    width: 500px;
+    margin: auto;
+}
+
+.item{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    border-radius: 2px;
+    padding: 16px;
+    color: #454545;
+    margin-top: 10px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.item:hover{
+    box-shadow: 0 0 20px black;
+    border: 1px solid black;
+}
+
+.item i{
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+@media(max-width:768px){
+    .nav {
+        align-items: center;
+        flex-direction: column;
+    }
+    .nav h2{
+        margin: 10px 0;
+    }
+    .user-input {
+        width: 100%;
+    }
+    .to-do-items{
+        width: 100%;
+    }
+}
+
+@media(max-width:480px){
+    .user-input input{
+        width: 74%;
+    }
+}
+
+@media(max-width:320px){
+    .user-input input{
+        width: 60%;
+    }
 }
