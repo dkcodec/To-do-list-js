@@ -1,23 +1,35 @@
-const ToDoitems = document.getElementsByClassName("to-do-items")[0];
+const toDoItems = document.getElementsByClassName("to-do-items")[0];
 const input = document.getElementById("input");
 const trashIcon = document.getElementById("trash");
 
-input.addEventListener("keydown", function(event){
+input?.addEventListener("keydown", function(event){
     if(event.key === "Enter")
         addItem();
 })
 
 function addItem (){
-    var divParent = document.createElement("div");
-    var divChild = document.createElement("div");
-    var checkIcon = document.createElement("i");
-    var trashIcon = document.createElement("i");
+    let divParent = document.createElement("div");
+    let divChild = document.createElement("div");
+    let checkIcon = document.createElement("i");
+    let trashIcon = document.createElement("i");
 
     divParent.className = "item";
     divParent.innerHTML = '<div>'+input.value+'</div>';
 
     checkIcon.className = "fa-solid fa-check";
     checkIcon.style.color = "lightgray";
+    checkIcon.addEventListener("mouseover", () =>{
+        checkIcon.style.color = "darkgreen";
+    })
+    checkIcon.addEventListener("click", function() {
+        checkIcon.style.color = "limegreen";
+    })
+    checkIcon.addEventListener("mouseout", () => {
+        checkIcon.style.color = "lightgray";
+        if ("click"){
+            checkIcon.style.color = "limegreen";
+        }
+    })
     checkIcon.addEventListener("click", function() {
         checkIcon.style.color = "limegreen";
     })
@@ -26,6 +38,12 @@ function addItem (){
 
     trashIcon.className = "fa-solid fa-trash";
     trashIcon.style.color = "darkgray";
+    trashIcon.addEventListener("mouseover", function(){
+        trashIcon.style.color = "red";
+    })
+    trashIcon.addEventListener("mouseout", function(){
+        trashIcon.style.color = "lightgray";    
+    })
     trashIcon.addEventListener("click", function(){
         trashIcon.style.color = "red";
         divParent.remove();
@@ -35,7 +53,7 @@ function addItem (){
 
     divParent.appendChild(divChild);
 
-    ToDoitems.appendChild(divParent);
+    toDoItems.appendChild(divParent);
 
     input.value = '';
 }   
